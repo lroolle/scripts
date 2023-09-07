@@ -1,0 +1,3 @@
+* ScriptShelf
+
+Welcome to ScriptShelf: a collection of useful scripts that may just save your day.

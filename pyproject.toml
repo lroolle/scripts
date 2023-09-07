@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "scripts"
+version = "0.1.0"
+description = ""
+authors = ["Eric Wang <wrqatw@gmail.com>"]
+readme = "README.org"
+packages = [{ include = "scripts" }]
+
+[tool.poetry.scripts]
+checkout-bitbucket = "scripts.checkout_branch:main"
+download-xyzfm = "scripts.download_xyzfm:main"
+list-scripts = "scripts.list_scripts:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+beautifulsoup4 = "^4.12.2"
+toml = "^0.10.2"
+termcolor = "^2.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+line_length = 100     # Keep same with black.line-length
+multi_line_output = 3
+
+[tool.black]
+line-length = 100 # Too short with default=80
+target-version = ["py311"]
+skip-magic-trailing-comma = true
+include = '\.pyi?$'
+force-exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migrations
+  | fixture
+  | fixtures
+)/
+'''
